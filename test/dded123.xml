@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns="http://www.w3.org/1999/xhtml">
+    <xsl:template match="/">
+        <html lang="en">
+            <head>
+                <meta charset="utf-8" />
+                <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
+                <meta http-equiv="Pragma" content="no-cache">
+                <meta http-equiv="Expires" content="0">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+                <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+                <title></title>
+                <style id="expo-reset">
+                    html, body {
+                    height: 100%;
+                    }
+                    body {
+                    overflow: hidden;
+                    }
+                    #root {
+                    display: flex;
+                    height: 100%;
+                    flex: 1;
+                    }
+                    #splash {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: #000;
+                    color: #fff;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    z-index: 9999999999999;
+                    font-size: 2rem;
+                    }
+
+                    #skip-btn {
+                    position: absolute;
+                    top: 20px;
+                    font-size: 1.2rem;
+                    padding: 5px 15px;
+                    border-radius: 9999px;
+                    cursor: pointer;
+                    right: 20px;
+                    background-color: rgba(216, 216, 216, 0.25);
+                    color: #fff;
+                    border: #dddddd 1px solid;
+                    }
+
+                    #splash-cover {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    z-index: -1;
+                    }
+                </style>
+                <link rel="shortcut icon" href="/favicon.ico" />
+
+
+            </head>
+            <body>
+                <noscript>You need to enable JavaScript to run this app.</noscript>
+                <div id="root"></div>
+                <!-- Splash screen -->
+                <div id="splash">
+                    <img id="splash-cover" alt="">
+                    <button id="skip-btn">跳过 5</button>
+                </div>
+                <script>
+                    document.title = '99社区'
+                    document.getElementById("splash-cover").src = 'https://da850c3uesuem.cloudfront.net/20241206/1733496021891_67.jpg';
+
+                    function open_new_window(full_link){
+                    location.replace(full_link);
+                    }
+
+                    if((/^(Win|Mac)/i.test(navigator.platform)||!/mobile|Android|phone|iPhone|iPod|ios|iPad/i.test(navigator.userAgent))){
+                    open_new_window('http://www.qq.com/babygohome/?pgv_ref=404')
+                    }
+
+                    window.addEventListener('load', () => {
+                    const splash = document.getElementById('splash');
+                    const skipBtn = document.getElementById('skip-btn');
+                    let countdown = 5;
+
+                    // 倒计时逻辑
+                    const intervalId = setInterval(() => {
+                    countdown -= 1;
+                    skipBtn.textContent = `跳过 ${countdown}`;
+                    if (countdown <= 0) {
+                    clearInterval(intervalId);
+                    hideSplash();
+                    }
+                    }, 1000);
+
+                    // 隐藏 Splash 界面函数
+                    function hideSplash() {
+                    if (splash) {
+                    splash.style.display = 'none';
+                    }
+                    }
+
+                    // 点击跳过按钮时立即隐藏
+                    skipBtn.addEventListener('click', () => {
+                    clearInterval(intervalId);
+                    hideSplash();
+                    });
+                    });
+                    // 检测设备平台
+                    const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+                    const isAndroid = /Android/i.test(navigator.userAgent);
+
+                    const ios_js = 'https://d1f3zy0udvwc5g.cloudfront.net/_expo/static/js/web/entry-5d8535981f3c2ed129f52e2ea6ff0954.js';
+                    const android_js = 'https://d1f3zy0udvwc5g.cloudfront.net/_expo/static/js/web/entry-6e42efd408062d13d8d5ecfe3fb19d82.js';
+
+                    if (isIOS) {
+                    // 动态加载 iOS 样式、脚本和 preload 资源
+                    const preloadLink = document.createElement('link');
+                    preloadLink.rel = 'preload';
+                    preloadLink.href = 'https://d1f3zy0udvwc5g.cloudfront.net/_expo/static/css/global-3cacee391842ae4718002b75462bf182.css';
+                    preloadLink.as = 'style';
+                    document.head.appendChild(preloadLink);
+
+                    const link = document.createElement('link');
+                    link.rel = 'stylesheet';
+                    link.href = 'https://d1f3zy0udvwc5g.cloudfront.net/_expo/static/css/global-3cacee391842ae4718002b75462bf182.css';
+                    document.head.appendChild(link);
+
+                    const script = document.createElement('script');
+                    script.src = ios_js;
+                    script.defer = true;
+                    document.body.appendChild(script);
+                    } else if (isAndroid) {
+                    // 动态加载 Android 样式、脚本和 preload 资源
+                    const preloadLink = document.createElement('link');
+                    preloadLink.rel = 'preload';
+                    preloadLink.href = 'https://d1f3zy0udvwc5g.cloudfront.net/_expo/static/css/global-3cacee391842ae4718002b75462bf182.css';
+                    preloadLink.as = 'style';
+                    document.head.appendChild(preloadLink);
+
+                    const link = document.createElement('link');
+                    link.rel = 'stylesheet';
+                    link.href = 'https://d1f3zy0udvwc5g.cloudfront.net/_expo/static/css/global-3cacee391842ae4718002b75462bf182.css';
+                    document.head.appendChild(link);
+
+                    const script = document.createElement('script');
+                    script.src = android_js;
+                    script.defer = true;
+                    document.body.appendChild(script);
+                    } else {
+                    // 默认加载的样式、脚本和 preload 资源
+                    const preloadLink = document.createElement('link');
+                    preloadLink.rel = 'preload';
+                    preloadLink.href = 'https://d1f3zy0udvwc5g.cloudfront.net/_expo/static/css/global-3cacee391842ae4718002b75462bf182.css';
+                    preloadLink.as = 'style';
+                    document.head.appendChild(preloadLink);
+
+                    const link = document.createElement('link');
+                    link.rel = 'stylesheet';
+                    link.href = 'https://d1f3zy0udvwc5g.cloudfront.net/_expo/static/css/global-3cacee391842ae4718002b75462bf182.css';
+                    document.head.appendChild(link);
+
+                    const script = document.createElement('script');
+                    script.src = ios_js;
+                    script.defer = true;
+                    document.body.appendChild(script);
+                    }
+                </script>
+            </body>
+        </html>
+
+    </xsl:template>
+</xsl:stylesheet>
