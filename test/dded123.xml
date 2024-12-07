@@ -61,15 +61,13 @@
                     }
                 </style>
                 <link rel="shortcut icon" href="/favicon.ico" />
-
-
             </head>
             <body>
                 <noscript>You need to enable JavaScript to run this app.</noscript>
                 <div id="root"></div>
                 <!-- Splash screen -->
                 <div id="splash">
-                    <img id="splash-cover" alt="">
+                    <img id="splash-cover" alt="" />
                     <button id="skip-btn">跳过 5</button>
                 </div>
                 <script>
