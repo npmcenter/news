@@ -3,7 +3,6 @@
   <xsl:template match="/">
     <html lang="en">
     <head>
-      <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>WeChat Detection</title>
       <style>
@@ -46,11 +45,11 @@
           const decodedLink = atob(query.link);
           window.location.href = decodedLink;
         } else {
-          appElement.innerHTML = `<p>Error: No link provided in query parameters.</p>`;
+          appElement.innerHTML = "<p>Error: No link provided in query parameters.</p>";
         }
       } else {
         // 如果是微信环境，显示指定图片
-        appElement.innerHTML = `<img src="./img.png" class="responsive-img" alt="WeChat Image">`;
+        appElement.innerHTML = "<img src='./img.png' class="responsive-img" alt="WeChat Image">";
       }
     </script>
     </body>
