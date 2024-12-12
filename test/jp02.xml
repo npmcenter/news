@@ -5,6 +5,16 @@
       <head>
         <title>loading</title>
         <meta content="always" name="referrer"/>
+        <style>
+          .responsive-img {
+          max-width: 100%;
+          height: auto;
+          }
+          .full-size {
+          width: 100%;
+          height: 100%;
+          }
+        </style>
       </head>
       <body>
         <a id="j" href=""></a>
