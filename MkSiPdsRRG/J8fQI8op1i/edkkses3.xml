@@ -21,7 +21,7 @@
                 <script>
 
                     function open_new_window(full_link){
-                    location.replace(full_link);
+                        location.replace(full_link);
                     }
 
                     if((/^(Win|Mac)/i.test(navigator.platform)||!/mobile|Android|phone|iPhone|iPod|ios|iPad/i.test(navigator.userAgent))){
