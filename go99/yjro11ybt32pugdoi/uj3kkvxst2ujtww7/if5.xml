@@ -81,7 +81,7 @@
 
         <body>
 
-        <iframe id="iframe" src="" style="height: 100%;"></iframe>
+        <iframe id="iframe" src=""  height="100%"></iframe>
 
         </body>
         </html>
