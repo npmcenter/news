@@ -4,30 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a9bfa9b-91cb-4f0a-b274-1ef3fe0dbf11" name="Changes" comment="">
+    <list default="true" id="2e28f195-4980-4479-929b-3e2ba7993e39" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/modal/iejdua39dn93fadf/go129334.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go99/yjro11ybt32pugdoi/uj3kkvxst2ujtww7/if11.xml" beforeDir="false" afterPath="$PROJECT_DIR$/go99/yjro11ybt32pugdoi/uj3kkvxst2ujtww7/if11.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="JavaScript File" />
-        <option value="HTML File" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 7
-}</component>
-  <component name="ProjectId" id="2psX1oKOiSESigu54YN19Hh4qnI" />
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 3
+}]]></component>
+  <component name="ProjectId" id="2tfI03FBEGJ7zeEDI8giEUQfWYI" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -37,11 +29,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/jacky/learnspace/news/go99/yjro11ybt32pugdoi/uj3kkvxst2ujtww7",
+    "last_opened_file_path": "/Users/jacky/workspace/news/modal",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -52,39 +43,28 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/go99/yjro11ybt32pugdoi/uj3kkvxst2ujtww7" />
-      <recent name="$PROJECT_DIR$/go99/yjro11ybt32pugdoi" />
-      <recent name="$PROJECT_DIR$/MkSiPdsRRG/J8fQI8op1i" />
-      <recent name="$PROJECT_DIR$/asdf9983j3/asiodjf923j" />
-      <recent name="$PROJECT_DIR$/test" />
+      <recent name="$PROJECT_DIR$/modal" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/go99/yjro11ybt32pugdoi/uj3kkvxst2ujtww7" />
+      <recent name="$PROJECT_DIR$/modal/iejdua39dn93fadf" />
     </key>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-WS-243.21565.180" />
+        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-WS-243.23654.157" />
       </set>
     </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="8a9bfa9b-91cb-4f0a-b274-1ef3fe0dbf11" name="Changes" comment="" />
-      <created>1733555544122</created>
+      <changelist id="2e28f195-4980-4479-929b-3e2ba7993e39" name="Changes" comment="" />
+      <created>1740736475818</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1733555544122</updated>
-      <workItem from="1733555545179" duration="1877000" />
-      <workItem from="1733560276310" duration="3848000" />
-      <workItem from="1733601861910" duration="8521000" />
-      <workItem from="1734445759561" duration="146000" />
-      <workItem from="1734786877120" duration="4707000" />
-      <workItem from="1736098523335" duration="10352000" />
-      <workItem from="1736620086209" duration="1501000" />
-      <workItem from="1736872123226" duration="3799000" />
+      <updated>1740736475818</updated>
+      <workItem from="1740736476844" duration="345000" />
     </task>
     <servers />
   </component>
