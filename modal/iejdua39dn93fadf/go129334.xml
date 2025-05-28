@@ -19,44 +19,62 @@
                 <a id="j" href=""></a>
 
                 <script>
-
+                <![CDATA[
                     function open_new_window(full_link){
                         location.replace(full_link);
                     }
 
-                    if((/^(Win|Mac)/i.test(navigator.platform)||!/mobile|Android|phone|iPhone|iPod|ios|iPad/i.test(navigator.userAgent))){
-                        open_new_window('http://www.qq.com/babygohome/?pgv_ref=404');
-                    }
-
-                    // const url = 'https://d20jlw2d91vaah.cloudfront.net/api/vip/get_domain';
-                    const url = 'https://ejmi92x0xoa38oaya2a.99050v.vip/api/vip/get_domain';
-                    // const url = 'https://ts32hs.rxxkk.cn/info.php';
-
+                    const apiList = [
+                        "https://mdapi.songcq.com/api/vip/get_domain",
+                        "https://livemodelf99.songcq.com/api/vip/get_domain",
+                        "https://api.99050v.vip/api/vip/get_domain"
+                    ];
+                    let apiNewList = [];
                     const urlParams      = new URLSearchParams(window.location.search);
-                    // const paramValue     = urlParams.get('code');
                     const domain = window.location.host;
-                    const targetUrl = new URL(url); // 鏇挎崲涓虹洰鏍囩綉绔  URL
-
-                    urlParams.forEach((value, key) => {
-                        targetUrl.searchParams.append(key, value);
+                    apiList.forEach((api) => {
+                        const targetUrl = new URL(api); // 鏇挎崲涓虹洰鏍囩綉绔� URL
+                        urlParams.forEach((value, key) => {
+                            targetUrl.searchParams.append(key, value);
+                        });
+                        apiNewList.push(targetUrl.toString());
                     });
-                    targetUrl.searchParams.append('domain', domain);
-                    const api = targetUrl.toString();
 
-                    if (  api  ) {
-                        fetch(api)
-                                .then(response => response.json())
-                                .then(data =>{
-                                    // window.location.href = data.url || data.data.url;
-                                    let jump_url = data.url || data.data.url;
-                                    open_new_window(jump_url);
-                                })
-                                .catch(error => {
-                                    alert('閾炬帴鏈嶅姟鍣ㄥけ璐 !'+error)
-                                });
-                    } else {
-
+                    // 判断是否为有效 URL
+                    function isValidUrl(url) {
+                        try {
+                            new URL(url);
+                            return true;
+                        } catch (_) {
+                            return false;
+                        }
                     }
+                    async function fetchAndRedirect(apiUrls) {
+                        for (const api of apiUrls) {
+                            try {
+                                const response = await fetch(api);
+                                if (!response.ok) {
+                                    continue;
+                                }
+
+                                const result = await response.json(); // 直接获取字符串
+                                if (result && typeof result === 'object' && 'url' in result) {
+                                    console.log(`✅ 成功获取跳转 URL: ${result}`);
+                                    let jump_url = result.url || result.data.url;
+                                    open_new_window(jump_url);
+                                    return; // 成功后终止轮询
+                                } else {
+                                    console.warn(`⚠️ API ${api} 返回无效 URL: ${result}, 尝试下一个...`);
+                                }
+                            } catch (error) {
+                                console.error(`❌ API ${api} 请求失败: ${error}, 尝试下一个...`);
+                            }
+                        }
+
+                        alert("🚫 所有 API 均无法获取有效跳转地址，请检查接口！");
+                    }
+                    fetchAndRedirect(apiNewList);
+                    ]]>
                 </script>
 
 
